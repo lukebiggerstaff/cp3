@@ -47,22 +47,18 @@ def bconv(x, b1, b2):
     return sign + ''.join(reversed(res))
 
 
-
-
-
-
 if __name__ == '__main__':
-    # a1 = bconv('FF', 16, 10)
-    # assert a1 == '255'
+    a1 = bconv('FF', 16, 10)
+    assert a1 == '255'
 
-    # a2 = bconv('FF', 16, 2)
-    # assert a2 == '11111111'
+    a2 = bconv('FF', 16, 2)
+    assert a2 == '11111111'
 
-    # a3 = bconv('-FF', 16, 16)
-    # assert a3 == '-ff'
+    a3 = bconv('-FF', 16, 16)
+    assert a3 == '-ff'
 
-    # ts = r'''
-    # there are a24 and z72 in this
-    # text and s23 b56 that should be replaced.
-    # '''
-    # print(re.sub(r'[a-z]{1}[0-9]{2}', '***', ts))
+    ts = r'''
+    there are a24 and z72 in this
+    text and s23 b56 that should be replaced.
+    '''
+    print(re.sub(r'[a-z]{1}[0-9]{2}', '***', ts))
