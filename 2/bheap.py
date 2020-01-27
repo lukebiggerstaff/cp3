@@ -82,7 +82,7 @@ if __name__ == '__main__':
     b = MaxHeap([3, 2, 4, 8, 9, 12, 45, 29, 80])
     print(b)
     b.insert(1)
-    print(b)
+    assert 1 in b.data
 
     c = random_list()
     d = heapsort(c)

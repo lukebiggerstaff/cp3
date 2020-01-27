@@ -161,16 +161,6 @@ def dfs(g, s, stack, visited):
             dfs(g, dest, stack, visited)
     stack.append(s)
 
-def topological_sort(g):
-    visited = set()
-    stack = list()
-    nodes = [x for x in g]
-    for node in nodes:
-        if node not in visited:
-            dfs(g, node, stack, visited)
-    return stack
-
-
 def dijkstra(g, s, d):
     dist = {x:10**20 for x in g}
     dist[s] = 0
@@ -192,10 +182,8 @@ def dijkstra(g, s, d):
 
 if __name__ == '__main__':
     g, l = dag_gen(8)
-    v = topological_sort(g)
     print(g)
     print(l)
-    print(v)
     g = Graph()
     g.add_vertex(1)
     g.add_vertex(2)

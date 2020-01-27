@@ -128,28 +128,17 @@ def bleaf(root): # prints values of leaf nodes in descending order
         print(f"leaf.value={root.value}")
     if root.left: bleaf(root.left)
     
-
-b = rtree_gen(20)
-isBST(b, 0, 21)
-# bleaf(b)
-inRange(b, 1, 10)
-# inorder(b)
-# print()
-# preorder(b)
-# print()
-# postorder(b)
-# print()
-# reverseorder(b)
-# print()
-
-
-
-
-
-# b = Node(25)
-# insert(b, 15)
-# insert(b, 11)
-# print(b)
-# c = delete(b, 11)
-# print(f"c is {c}")
-
+if __name__ == '__main__':
+    b = rtree_gen(20)
+    isBST(b, 0, 21)
+    bleaf(b)
+    inRange(b, 1, 10)
+    print()
+    inorder(b)
+    print()
+    preorder(b)
+    print()
+    postorder(b)
+    print()
+    reverseorder(b)
+    print()

@@ -141,22 +141,23 @@ if __name__ == "__main__":
     for line in elam:
         print(line)
     print("################")
+
     # all exercises done for weighted graphs below
-    # n = 3
-    # wedges = [
-    #     [(1,3),(2,2)],
-    #     [(2,1),(0,8)],
-    #     [(1,2),(0,7)],
-    # ]
-    # i = create_wam(n, wedges)
-    # print('wam')
-    # for line in i:
-    #     print(line)
-    # j = create_wadjlist(n, wedges)
-    # print('wadjlist')
-    # for line in j:
-    #     print(line)
-    # k = create_wedgel(n, wedges)
-    # print('wedgelist')
-    # for line in k:
-    #     print(line)
+    n = 3
+    wedges = [
+        [(1,3),(2,2)],
+        [(2,1),(0,8)],
+        [(1,2),(0,7)],
+    ]
+    i = create_wam(n, wedges)
+    print('wam')
+    for line in i:
+        print(line)
+    j = create_wadjlist(n, wedges)
+    print('wadjlist')
+    for line in j:
+        print(line)
+    k = create_wedgel(n, wedges)
+    print('wedgelist')
+    for line in k:
+        print(line)
