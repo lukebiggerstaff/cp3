@@ -3,7 +3,7 @@ class Fenwick:
     takes a lst of numbers and creates a fenwick tree a.k.a. a binary indexed tree
     a fenwick tree is a tree with parent and child nodes based on the binary
     representation of the integer index. it is a 1-based array that takes O(n+1)
-    storage for a 0-based array. Initialization of the Fenwick tree takes O(n) time
+    storage for a 0-based lst. Initialization of the Fenwick tree takes O(n) time
     and allows for the update operation in O(log n) and range queries in O(log n).
     """
 
