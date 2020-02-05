@@ -7,18 +7,6 @@ from random import randint
 from itertools import combinations, permutations
 
 
-def gen_sub(l):
-    n = len(l)
-    for a in range(n):
-        for b in range(n):
-            if b == a:
-                continue
-            for c in range(n):
-                if c == b or c == a:
-                    continue
-                yield (l[a], l[b], l[c])
-
-
 def locker_combo():
     n = 10
     for a in range(n):
