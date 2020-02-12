@@ -22,7 +22,7 @@ def cslis(l):
 def lis(l):
     """
     the longest increasing subsequence is the longest stretch
-    where each preceding element (but not necessarly contiguous)
+    where each preceding element (but not necessarily contiguous)
     in the subsequence is less than the next element. The trick
     is to iterate through every subsequence from j to i and keep
     track of the longest subsequence at every i.
