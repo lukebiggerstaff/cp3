@@ -53,6 +53,7 @@ def tdbitsp(al):
     This recursive implementation uses a bitmask to track visited locations 
     """
 
+    # store state information to solve overlapping sub-problems
     states = dict()
 
     def best_route(i, mask=1):
@@ -60,6 +61,7 @@ def tdbitsp(al):
             return al[i][0]
         # initialize min_route to large integer
         min_route = 1 << 20
+        # initialize key to store state
         key = (i, mask)
         if key in states:
             return states[key]
