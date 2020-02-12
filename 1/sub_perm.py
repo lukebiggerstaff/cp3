@@ -1,23 +1,32 @@
 from itertools import combinations, permutations
 from random import randint
 
-def subs(l):
-    if l == []:
-        return [[]]
-    x = subs(l[1:])
-    res =  x + [[l[0]] + y for y in x]
-    return res
 
-def pset(s):
-    if type(s) != list:
-        s = list(s)
-    for r in range(len(s)+1):
-        yield from combinations(s, r)
+def powerset(s):
+    n = len(s)
+    for i in range((1 << n)):
+        yield [s[j] for j in range(n) if (i & (1 << j))]
 
-if __name__ == '__main__':
-    for i in pset(range(4)):
+
+def swap(lst, i, j):
+    lst[i], lst[j] = lst[j], lst[i]
+
+
+def perm(a, i):
+    n = len(a)
+    if i == n:
+        yield a
+    for j in range(i, n):
+        swap(a, i, j)
+        yield from perm(a, i + 1)
+        swap(a, i, j)
+
+
+if __name__ == "__main__":
+    print("generate all subsets of a set")
+    for i in powerset(["a", "b", "c"]):
         print(i)
-    
-    # generate all possible permutations of N=10 letters of alphabet
-    for i in permutations(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']):
+
+    print("generate all permutations of a set")
+    for i in perm(["a", "b", "c"], 0):
         print(i)

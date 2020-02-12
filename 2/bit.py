@@ -33,6 +33,11 @@ if __name__ == "__main__":
     n = 34
     assert n & 1 == 0
 
+    # check if a number is equal to another using xor
+    a = 5
+    b = 5
+    assert a ^ b == 0
+
     # determine if n is a power of 2
     # power of 2 has form of 10 = 2 100 = 4 1000 = 8
     # taking the bitwise AND of a power of 2 minus 1 will result in 0
@@ -137,3 +142,13 @@ if __name__ == "__main__":
     a ^= b
     print(f"a={bin(a)}, b={bin(b)}")
 
+    # create all subsets of a set
+    # excluding empty set
+    b = [1, 2, 3]
+    n = len(b)
+    for i in range((1 << n)):
+        print("(", end="")
+        for j in range(n):
+            if i & (1 << j):
+                print(f"{b[i]} ", end="")
+        print(")")
