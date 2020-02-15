@@ -9,7 +9,7 @@ def dominator(al, x, y):
         if i == y:
             nonlocal y_reachable
             y_reachable = True
-        if i != x:
+        if i != x and not y_reachable:
             for nxt in al[i]:
                 if nxt not in visited:
                     visited.add(nxt)
