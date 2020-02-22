@@ -63,8 +63,7 @@ def al_el(al):
 def el_am(el):
     v = set()  # create set to find all unique nodes in list
     for i, j in el:
-        v.add(i)
-        v.add(j)
+        v.update([i, j])
     am = [[0 for _ in range(len(v))] for _ in range(len(v))]
     for i, j in el:
         am[i][j] = 1
@@ -74,8 +73,7 @@ def el_am(el):
 def el_al(el):
     v = set()
     for i, j in el:
-        v.add(i)
-        v.add(j)
+        v.update([i, j])
     al = [[] for _ in range(len(v))]
     for i, j in el:
         al[i].append(j)
@@ -144,20 +142,16 @@ if __name__ == "__main__":
 
     # all exercises done for weighted graphs below
     n = 3
-    wedges = [
-        [(1,3),(2,2)],
-        [(2,1),(0,8)],
-        [(1,2),(0,7)],
-    ]
+    wedges = [[(1, 3), (2, 2)], [(2, 1), (0, 8)], [(1, 2), (0, 7)]]
     i = create_wam(n, wedges)
-    print('wam')
+    print("wam")
     for line in i:
         print(line)
     j = create_wadjlist(n, wedges)
-    print('wadjlist')
+    print("wadjlist")
     for line in j:
         print(line)
     k = create_wedgel(n, wedges)
-    print('wedgelist')
+    print("wedgelist")
     for line in k:
         print(line)
