@@ -35,16 +35,16 @@ def minimax_path(el, i, j):
     on a graph el, from vertex i to j
     """
 
-    def path_find(u, j, al, path_value=0, visited=set()):
+    def path_find(u, j, al, path_max=0, visited=set()):
         visited.add(u)
         # update max value if we have reached destination
         if u == j:
             nonlocal max_value
-            max_value = path_value
+            max_value = path_max
         for v, weight in al[u]:
             if v not in visited:
                 # pass down current max value and recurse
-                path_find(v, j, al, max(path_value, weight))
+                path_find(v, j, al, max(path_max, weight))
 
     # sort edge list in place to prepare for kruskal's algorithm
     # to construct the mst
