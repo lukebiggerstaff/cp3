@@ -1,3 +1,4 @@
+from math import inf
 from collections import deque
 
 
@@ -9,22 +10,22 @@ def is_bipartite(al):
     an already colored/visited node and it is not the opposite color
     then we know that the graph is not bipartite.
     """
-    color = [(1 << 20) for _ in range(len(al))]
+    colors = [inf for _ in range(len(al))]
 
     # color first point 0
-    color[0] = 0
+    colors[0] = 0
     queue = deque([0])
     while queue:
-        i = queue.popleft()
-        i_color = color[i]
-        for j in al[i]:
+        u = queue.popleft()
+        u_color = colors[u]
+        for v in al[u]:
             # color node if it is not already colored
-            if color[j] == (1 << 20):
-                queue.append(j)
-                color[j] = 1 - i_color
+            if colors[v] == inf:
+                queue.append(v)
+                colors[v] = 1 - u_color
             # if color matches current node color
             # than graph is not bipartite.
-            if color[j] == i_color:
+            if colors[v] == u_color:
                 return False
     return True
 
